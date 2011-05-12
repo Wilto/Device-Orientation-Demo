@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta name="description" content="deviceOrientation Demo" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" /> 
+    
+    <title>IT&rsquo;S A SECRET TO EVERYONE</title> 
+
+	<style type="text/css"> 
+		body {
+			background: #000;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			max-width: 100%;
+		}
+		@media screen and (min-width: 600px) {
+			article {
+				padding: 100px 0 0 0;
+			}
+		}
+    </style>
+
+  </head> 
+  <body> 
+	<article>
+		<img src="html5-shield.png" id="shield" />
+		<img src="link.gif" />
+	</article>
+
+    <script type="text/javascript"> 
+		function itsDangerousToGoAlone(event) {
+			var rotate = event.gamma * -.8,
+				scale = ( event.beta / 180) * 2.25 + 1;
+			
+			document.getElementById('shield').style.webkitTransform = 
+				'rotate(' + rotate + 'deg)' + 'scale(' + scale + ')';
+		}
+		
+		window.addEventListener('deviceorientation', itsDangerousToGoAlone);
+    </script> 
+ 
+  </body> 
+</html>
